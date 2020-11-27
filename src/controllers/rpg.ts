@@ -4,16 +4,16 @@ import eradaniConnect from '@eradani-inc/eradani-connect';
 import * as loggerService from '../services/logger';
 import LnxCalcItf, { LnxCalcItfInput, LnxCalcItfOutput } from '../models/LnxCalcItf';
 
-const credentials = config.eradaniConnect.credentials;
+// A const credentials = config.eradaniConnect.credentials;
 const logger = loggerService.createForContext('controllers/rpg');
 
-// Const transport = new eradaniConnect.transports.Odbc(config.eradaniConnect.odbc);
-const transport = new eradaniConnect.transports.Xml(
-    '*LOCAL',
-    credentials.username,
-    credentials.password,
-    config.eradaniConnect.xml
-);
+const transport = new eradaniConnect.transports.Odbc(config.eradaniConnect.odbc, config.eradaniConnect.odbcOptions);
+// A const transport = new eradaniConnect.transports.Xml(
+// A     '*LOCAL',
+// A     credentials.username,
+// A     credentials.password,
+// A     config.eradaniConnect.xml
+// A );
 
 /**
  * Run the Template program.

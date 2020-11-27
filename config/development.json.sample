@@ -24,16 +24,25 @@
             "debug": true
         },
         "odbc": "DSN=*LOCAL",
+        "odbcOptions": {
+            "debug": true,
+            "noPool": true,
+            "pool": {
+                "reuseConnections": true,
+                "initialSize": 5,
+                "incrementSize": 5,
+                "maxSize": 15
+            }
+        },
         "credentials": {
             "username": "demo1234",
             "password": "demodemo"
         },
         "native": {
-            
+            "objlib": "ECNCTAPP",
+            "templateDataLib": "QIWS"
         }
     },
 
-    "defaults": {
-        
-    }
+    "defaults": {}
 }
