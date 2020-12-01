@@ -39,7 +39,7 @@
     "author": "Eradani",
     "homepage": "https://github.com/eradani-inc/eradani-connect-template#readme",
     "dependencies": {
-        "@eradani-inc/eradani-connect": "file:../../eradani-connect-nodejs",
+        "@eradani-inc/eradani-connect": "^2.4.0-beta.1",
         "@types/express": "^4.17.2",
         "@types/express-validator": "^3.0.0",
         "@types/safe-json-stringify": "^1.1.0",
