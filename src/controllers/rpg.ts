@@ -2,7 +2,7 @@ import configService from '../../config';
 const config = configService.get();
 import eradaniConnect from '@eradani-inc/eradani-connect';
 import * as loggerService from '../services/logger';
-import LnxCalcItf, { LnxCalcItfInput, LnxCalcItfOutput } from '../models/LnxCalcItf';
+import { LnxCalcModel, LnxCalcInput, LnxCalcOutput } from '../models/LnxCalcItf';
 
 const credentials = config.eradaniConnect.credentials;
 const logger = loggerService.createForContext('controllers/rpg');
@@ -19,12 +19,12 @@ const transport = new eradaniConnect.transports.Xml(
  * Run the Template program.
  *
  * @param {number} num The number to input to the program
- * @returns {Promise<LnxCalcItfOutput}
+ * @returns {Promise<LnxCalcOutput}
  */
-export async function linuxCalc(num: number): Promise<LnxCalcItfOutput> {
-    logger.debug('Calling LnxCalcItf program');
-    const params: LnxCalcItfInput = {
-        IBMICORES: num
+export async function linuxCalc(num: number): Promise<LnxCalcOutput> {
+    logger.debug('Calling LnxCalc program');
+    const params: LnxCalcInput = {
+        ibmiCores: num
     };
-    return transport.execute(LnxCalcItf, params) as Promise<LnxCalcItfOutput>;
+    return transport.execute(LnxCalcModel, params) as Promise<LnxCalcOutput>;
 }

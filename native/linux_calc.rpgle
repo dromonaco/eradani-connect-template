@@ -8,9 +8,11 @@
       *
       /copy LnxCalcItf.rpgleinc
 
-     DLINUX_CALC       PI
-     DIBMICORES                      15P 0
-     DLINUXSERVERS                   16P 0
+     DLnxCalc          PI
+     DIbmiCores                      15P 0
+     DLinuxServers                   16P 0
 
-     C     IBMICORES     MULT      40            LINUXSERVERS
-     C                   seton                                        LR
+       LinuxServers = IbmiCores * 40;
+
+       *InLr = *On;
+       Return;

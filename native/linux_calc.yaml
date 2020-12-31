@@ -1,15 +1,18 @@
 ---
 name: LnxCalcItf
 pgmmodels:
-  LINUX_CALC:
+  LnxCalc:
     library: \config.eradaniConnect.native.objlib
-    params:
-      IBMICORES:
-        type: Packed
-        length: 15
-        precision: 0
-      LINUXSERVERS:
-        type: Packed
-        length: 16
-        precision: 0
-        outputOnly: true
+    extpgm: LINUX_CALC
+    procedures:
+      MainProc:
+        params:
+          IbmiCores:
+            type: Packed
+            length: 15
+            precision: 0
+          LinuxServers:
+            type: Packed
+            length: 16
+            precision: 0
+            outputOnly: true

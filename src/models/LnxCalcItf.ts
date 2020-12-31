@@ -7,16 +7,16 @@ const { dataTypes } = eradaniConnect;
 const config = configService.get();
 
 // Exported function call
-export default new eradaniConnect.run.Pgm('LINUX_CALC', {
+export const LnxCalcModel = new eradaniConnect.run.Pgm('LINUX_CALC', {
     lib: config.eradaniConnect.native.objlib,
     mode: 'ile',
     params: [
         {
-            name: 'IBMICORES',
+            name: 'IbmiCores',
             type: new dataTypes.PackedDecimal(15, 0)
         },
         {
-            name: 'LINUXSERVERS',
+            name: 'LinuxServers',
             type: new dataTypes.PackedDecimal(16, 0),
             outputOnly: true
         }
@@ -24,13 +24,13 @@ export default new eradaniConnect.run.Pgm('LINUX_CALC', {
 });
 
 // Input interface
-export interface LnxCalcItfInput {
-    IBMICORES: number | string;
-    LINUXSERVERS?: never;
+export interface LnxCalcInput {
+    ibmiCores: number | string;
+    linuxServers?: never;
 }
 
 // Output interface
-export interface LnxCalcItfOutput {
-    IBMICORES: number;
-    LINUXSERVERS: number;
+export interface LnxCalcOutput {
+    ibmiCores: number;
+    linuxServers: number;
 }
