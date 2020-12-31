@@ -24,7 +24,7 @@ const transport = new eradaniConnect.transports.Xml(
 export async function linuxCalc(num: number): Promise<LnxCalcOutput> {
     logger.debug('Calling LnxCalc program');
     const params: LnxCalcInput = {
-        ibmiCores: num
+        IbmiCores: num
     };
     return transport.execute(LnxCalcModel, params) as Promise<LnxCalcOutput>;
 }

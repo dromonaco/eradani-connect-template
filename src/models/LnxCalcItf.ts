@@ -25,12 +25,12 @@ export const LnxCalcModel = new eradaniConnect.run.Pgm('LINUX_CALC', {
 
 // Input interface
 export interface LnxCalcInput {
-    ibmiCores: number | string;
-    linuxServers?: never;
+    IbmiCores: number | string;
+    LinuxServers?: never;
 }
 
 // Output interface
 export interface LnxCalcOutput {
-    ibmiCores: number;
-    linuxServers: number;
+    IbmiCores: number;
+    LinuxServers: number;
 }
